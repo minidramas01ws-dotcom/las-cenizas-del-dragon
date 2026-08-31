@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Las Cenizas del Dragón — Episodio 1: El Despertar</title>
+<meta name="description" content="Las Cenizas del Dragón — Episodio 1: El Despertar. Algo ha despertado... y el reino todavía no sabe lo que se aproxima.">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#090909;color:#f2eee7;font-family:Georgia,"Times New Roman",serif}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px 20px;background:radial-gradient(circle at 50% 35%,#27231e 0,#100f0d 38%,#050505 78%);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,#050505 100%);pointer-events:none}
+.wrap{width:min(900px,100%);position:relative;z-index:1}
+.kicker{letter-spacing:.32em;text-transform:uppercase;font:12px Arial,sans-serif;opacity:.72}
+h1{font-size:clamp(42px,8vw,82px);line-height:.95;margin:18px 0 14px;font-weight:500}
+.tagline{font-size:clamp(18px,3vw,27px);font-style:italic;opacity:.86;max-width:650px;margin:0 auto 34px}
+.btn{display:inline-block;padding:15px 30px;border:1px solid #c9b78f;color:#f4ead6;text-decoration:none;text-transform:uppercase;letter-spacing:.15em;font:12px Arial,sans-serif;background:#17130e;transition:.2s}
+.btn:hover{background:#292117}
+section{padding:70px 20px}
+.content{width:min(850px,100%);margin:auto}
+h2{text-align:center;font-size:clamp(28px,5vw,44px);font-weight:500;margin:0 0 28px}
+.lead{text-align:center;font-size:18px;line-height:1.7;color:#cfc8bd}
+.video-box{margin:35px auto 0;max-width:520px;background:#000;border:1px solid #302c26}
+video{display:block;width:100%;height:auto;max-height:78vh;background:#000}
+.cta{background:linear-gradient(#0d0c0b,#15120f);text-align:center}
+form{display:flex;gap:10px;max-width:560px;margin:25px auto 0}
+input{flex:1;min-width:0;padding:15px;background:#0a0a0a;border:1px solid #4b453c;color:#fff;font-size:16px}
+button{padding:15px 20px;background:#c9b78f;border:0;color:#0b0b0b;font-weight:bold;letter-spacing:.08em}
+.note{font:12px Arial,sans-serif;color:#8f8a82;margin:14px auto;max-width:560px;line-height:1.5}
+footer{padding:28px 20px;text-align:center;font:11px Arial,sans-serif;color:#716d67;border-top:1px solid #24211e}
+@media(max-width:600px){form{flex-direction:column}.btn,button{width:100%}}
+</style>
+<!-- META PIXEL: INSERT YOUR PIXEL CODE HERE -->
+<!-- GA4: INSERT YOUR MEASUREMENT CODE HERE -->
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Una historia de fantasía oscura</div>
+    <h1>Las Cenizas<br>del Dragón</h1>
+    <p class="tagline">Episodio 1 — <em>El Despertar</em><br>Algo ha despertado... y el reino todavía no sabe lo que se aproxima.</p>
+    <a class="btn" href="#episodio" data-event="ViewContent">Ver episodio 1</a>
+  </div>
+</header>
+
+<main>
+<section id="episodio">
+  <div class="content">
+    <h2>Episodio 1</h2>
+    <p class="lead">Una tormenta. Una presencia ancestral. Y una joven que comienza a descubrir que su destino puede ser mucho más grande de lo que imaginaba.</p>
+    <div class="video-box">
+      <video id="episodeVideo" controls playsinline preload="metadata" poster="">
+        <source src="Episodio_1_corregido_dialogo.mp4" type="video/mp4">
+        Tu navegador no puede reproducir este video.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<section id="opinion">
+  <div class="content">
+    <h2>¿Qué quieres descubrir en el Episodio 2?</h2>
+    <p class="lead">La historia apenas comienza. Queremos saber qué despertó tu curiosidad.</p>
+    <form id="feedbackForm" style="display:block;max-width:650px;margin:25px auto 0">
+      <div style="display:grid;gap:12px;text-align:left;font:15px Arial,sans-serif;color:#d8d2c8">
+        <label><input type="checkbox" name="interest" value="Vínculo entre Nyra y Thaeron"> 🐉 El vínculo entre Nyra y Thaeron</label>
+        <label><input type="checkbox" name="interest" value="Poderes de Nyra"> ✨ Los poderes de Nyra</label>
+        <label><input type="checkbox" name="interest" value="Lo que Liriane sabe"> 🔮 Lo que Liriane sabe</label>
+        <label><input type="checkbox" name="interest" value="Papel de Kaelen"> ⚔️ El papel de Kaelen</label>
+        <label><input type="checkbox" name="interest" value="La guerra que se aproxima"> 🌑 La guerra que se aproxima</label>
+        <label><input type="checkbox" name="interest" value="Otro"> ❓ Otro</label>
+        <textarea id="feedbackText" placeholder="Cuéntanos por qué..." rows="4" style="padding:15px;background:#0a0a0a;border:1px solid #4b453c;color:#fff;font:16px Arial,sans-serif;resize:vertical"></textarea>
+        <input id="alias" type="text" placeholder="Tu nombre o alias (opcional)" style="padding:15px;background:#0a0a0a;border:1px solid #4b453c;color:#fff;font-size:16px">
+        <button type="submit">ENVIAR MI OPINIÓN</button>
+      </div>
+    </form>
+    <p id="feedbackSuccess" class="note" hidden>Gracias por compartir tu opinión. Nos ayudará a decidir cómo continúa la historia.</p>
+  </div>
+</section>
+
+<section class="cta" id="continuar">
+  <div class="content">
+    <h2>La historia apenas comienza.</h2>
+    <p class="lead">¿Quieres descubrir qué le espera a Nyra?</p>
+    <form id="leadForm">
+      <input id="email" type="email" placeholder="Tu correo electrónico" autocomplete="email" required>
+      <button type="submit">Quiero ver el Episodio 2</button>
+    </form>
+    <p class="note">Te avisaremos cuando el siguiente episodio esté disponible. Al registrarte aceptas recibir información relacionada con la serie.</p>
+    <p id="success" class="note" hidden>¡Listo! Te avisaremos cuando el Episodio 2 esté disponible.</p>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Las Cenizas del Dragón</footer>
+
+<script>
+const video=document.getElementById('episodeVideo');
+const leadForm=document.getElementById('leadForm');
+const success=document.getElementById('success');
+const sent=new Set();
+
+function track(name, params={}){
+  if(typeof fbq==='function') fbq('trackCustom',name,params);
+  if(typeof gtag==='function') gtag('event',name,params);
+  console.log('EVENT',name,params);
+}
+
+video.addEventListener('play',()=>track('EpisodeStart'));
+[25,50,75].forEach(p=>{
+  video.addEventListener('timeupdate',()=>{
+    if(video.duration && video.currentTime/video.duration*100>=p && !sent.has(p)){
+      sent.add(p); track('Episode'+p);
+    }
+  });
+});
+video.addEventListener('ended',()=>track('EpisodeComplete'));
+
+
+document.getElementById('feedbackForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const choices=[...document.querySelectorAll('#feedbackForm input[name="interest"]:checked')].map(x=>x.value);
+  const text=document.getElementById('feedbackText').value.trim();
+  const alias=document.getElementById('alias').value.trim();
+  track('CommentSubmitted',{interests:choices.join('|'),has_comment:!!text,has_alias:!!alias});
+  document.getElementById('feedbackSuccess').hidden=false;
+  e.target.reset();
+});
+
+leadForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const email=document.getElementById('email').value.trim();
+  if(!email)return;
+  track('Lead',{content_name:'Episodio 2',email_provided:true});
+  success.hidden=false;
+  leadForm.reset();
+});
+</script>
+</body>
+</html>
