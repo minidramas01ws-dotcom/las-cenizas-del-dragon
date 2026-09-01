@@ -118,16 +118,47 @@ video.addEventListener('play',()=>track('EpisodeStart'));
 video.addEventListener('ended',()=>track('EpisodeComplete'));
 
 
-document.getElementById('feedbackForm').addEventListener('submit',e=>{
+document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
   e.preventDefault();
-  const choices=[...document.querySelectorAll('#feedbackForm input[name="interest"]:checked')].map(x=>x.value);
-  const text=document.getElementById('feedbackText').value.trim();
-  const alias=document.getElementById('alias').value.trim();
-  track('CommentSubmitted',{interests:choices.join('|'),has_comment:!!text,has_alias:!!alias});
-  document.getElementById('feedbackSuccess').hidden=false;
-  e.target.reset();
-});
 
+  const form = e.target;
+  const choices = [...document.querySelectorAll('#feedbackForm input[name="interest"]:checked')]
+    .map(x => x.value);
+
+  const text = document.getElementById('feedbackText').value.trim();
+  const alias = document.getElementById('alias').value.trim();
+
+  const data = new FormData();
+  choices.forEach(choice => data.append('interés', choice));
+  data.append('comentario', text);
+  data.append('alias', alias);
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      track('CommentSubmitted', {
+        interests: choices.join('|'),
+        has_comment: !!text,
+        has_alias: !!alias
+      });
+
+      document.getElementById('feedbackSuccess').hidden = false;
+      form.reset();
+    } else {
+      alert('No se pudo enviar el comentario. Inténtalo nuevamente.');
+    }
+  } catch (error) {
+    console.error(error);
+    alert('No se pudo conectar con el formulario. Inténtalo nuevamente.');
+  }
+});
 leadForm.addEventListener('submit',e=>{
   e.preventDefault();
   const email=document.getElementById('email').value.trim();
