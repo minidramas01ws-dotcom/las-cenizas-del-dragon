@@ -118,10 +118,11 @@ video.addEventListener('play',()=>track('EpisodeStart'));
 video.addEventListener('ended',()=>track('EpisodeComplete'));
 
 
-document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+  document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const form = e.target;
+
   const choices = [...document.querySelectorAll('#feedbackForm input[name="interest"]:checked')]
     .map(x => x.value);
 
@@ -129,18 +130,19 @@ document.getElementById('feedbackForm').addEventListener('submit', async (e) => 
   const alias = document.getElementById('alias').value.trim();
 
   const data = new FormData();
+
   choices.forEach(choice => data.append('interés', choice));
   data.append('comentario', text);
   data.append('alias', alias);
 
   try {
-   const response = await fetch('https://formspree.io/f/mppzpqkk', {
-  method: 'POST',
-  body: data,
-  headers: {
-    'Accept': 'application/json'
-  }
-}); 
+    const response = await fetch('https://formspree.io/f/mppzpqkk', {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
 
     if (response.ok) {
       track('CommentSubmitted', {
@@ -159,6 +161,7 @@ document.getElementById('feedbackForm').addEventListener('submit', async (e) => 
     alert('No se pudo conectar con el formulario. Inténtalo nuevamente.');
   }
 });
+
 leadForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
